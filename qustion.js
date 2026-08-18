@@ -75,27 +75,42 @@ Output: [1,1,0]
 Constraints:
 1 <= temperatures.length <= 105
 30 <= temperatures[i] <= 100
- */
-let temperatures = [73, 74, 75, 71, 69, 72, 76, 73]
-let ans = []
-let stack = []
-let i = temperatures.length - 1;
-while (i >= 0) {
-    if (stack.length === 0) {
-        stack.push(i)
-        ans[i] = 0
-    }
-    else {
-        if (temperatures[i] <= temperatures[stack[stack.length - 1]]) {
-            stack.push(i);
-            ans[i] = stack[stack.length - 1] - i;
-        }
-        else {
-            let temp = stack.pop();
-            
-        }
+//  */
+// let temperatures = [73, 74, 75, 71, 69, 72, 76, 73]
+// let stack = []
+// let i = temperatures.length - 1;
+// let ans = new Array(i).fill(0)
+// let foundWarmer = 0;
+// while (i >= 0) {
+//     if (stack.length === 0) {
+//         stack.push(i)
+//         ans[i] = 0
+//         foundWarmer = 1
+//     }
+//     else {
+//         if (temperatures[i] <= temperatures[stack[stack.length - 1]]) {
+//             foundWarmer = 1
+//             ans[i] = stack[stack.length - 1] - i;
+//             stack.push(i);
+//             console.log(`ans[${i}]`, stack[stack.length - 1], "-", i)
+//         }
+//         else {
+//             let temp = stack.pop();
+//         }
 
-    }
+//     }
+//     if (foundWarmer && i >= 0) {
+//         i--
+//     }
 
-    i--;
-}
+//     // if (stack.length === 0) { }
+//     // if (foundWarmer) {
+//     //     ans[i] = stack[stack.length - 1] - i;
+//     //     stack.push(i);
+//     // }
+//     // else {
+//     //     ans[i] = 0
+//     // }
+// }
+
+
